@@ -1,0 +1,14 @@
+
+.text_holder {
+    font-size: clamp(0.2rem, 1.2vw, 6rem);
+    /* background-color: red; */
+}
+
+.text_holder2 {
+    font-size: clamp(0.8rem, 1.2vw, 6rem);
+    /* background-color: red; */
+}
+
+.text_holder3 {
+    font-size: clamp(0.8em, 1.2vw, 6rem);
+}
