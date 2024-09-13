@@ -35,13 +35,13 @@ function SearchInput() {
 }
 
 function Cart() {
-    const { cartData } = useContext(Context)
+    const { cartData, cart } = useContext(Context)
     return (
         <div className='flex flex-row xlmob:min-w-[17%] items-center justify-evenly '>
             <div className='bg-black w-[3em] h-[3em] mx-2'></div>
             <div className='w-[3.4em] h-[3em]'>
                 <div className='bg-green-600 text-white flex items-center justify-center absolute ml-10 w-[20px] h-[20px] rounded-full'>
-                    {cartData.count}
+                    {cart.length}
                 </div>
                 <img src={CartIcon} alt="" srcset="" />
             </div>

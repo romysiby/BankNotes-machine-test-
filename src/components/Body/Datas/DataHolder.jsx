@@ -10,6 +10,7 @@ import BagIcon from "../../../../public/images/bag-icon.png"
 
 import { Context } from '../../../App'
 import { LogoAndTitle } from '../../Header/Title'
+import { Link } from 'react-router-dom'
 
 function DataHolder() {
     const [limit, setLimit] = useState(8)
@@ -53,8 +54,10 @@ function DataHolder() {
         <>
             <div className='my-2 px-7 grid xmob:grid-cols-2 xlmob:grid-cols-3 1xl:grid-cols-4 grid-cols-1 gap-8'>
                 {
-                    limitedData.map(item => {
-                        return <Item rating={item.rating.rate} title={item.title} price={item.price} image={item.image} />
+                    limitedData.map((item) => {
+                        return <Link to={`/product/${item.id}`}>
+                            <Item rating={item.rating.rate} title={item.title} price={item.price} image={item.image} />
+                        </Link>
                     })
                 }
             </div>
@@ -89,7 +92,7 @@ function Navigate(props) {
     )
 }
 
-function Item(props) {
+export function Item(props) {
     const { setCartData } = useContext(Context)
     const [toggle, setToggle] = useState(false)
 
@@ -130,7 +133,7 @@ function Item(props) {
     )
 }
 
-function GetRatings(props) {
+export function GetRatings(props) {
     const { rating } = props
     
     if(Math.floor(rating) === 5) {
